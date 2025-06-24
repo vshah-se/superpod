@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "WTF is Policing? Bengaluru Police Special",
+    "author": "Nikhil Kamath",
+    "rating": 4.8,
+    "duration": "88 min",
+    "description": "Nikhil explores Bengaluru's traffic management and policing system with the city's top police commissioners. Discover how AI and technology are revolutionizing urban traffic control and what it really takes to be a police officer in India's tech capital.",
+    "imageUrl": "/src/assets/images/video_01_LcWoP6KtZKw_maxresdefault.jpg",
+    "category": "Government & Society"
+  },
+  {
+    "id": 2,
+    "title": "Building Influence Today",
+    "author": "Nikhil Kamath",
+    "rating": 4.6,
+    "duration": "75 min",
+    "description": "What does it take to build real influence in today's digital world? Nikhil sits down with content creators Nuseir, Tanmay, Prajakta, and Ranveer to decode the modern influence game and authentic audience building.",
+    "imageUrl": "/src/assets/images/video_02_JjDjDvNgkFo_maxresdefault.jpg",
+    "category": "Business & Marketing"
+  },
+  {
+    "id": 3,
+    "title": "Andrew Tate on Masculinity & Politics",
+    "author": "Tracy Harmoush",
+    "rating": 4.2,
+    "duration": "95 min",
+    "description": "A controversial deep dive into modern masculinity, politics, and personal responsibility. Andrew Tate discusses his views on family, allegations, and his perspective on 'The Matrix' of modern society.",
+    "imageUrl": "/src/assets/images/video_03_3NexOrW0uew_maxresdefault.jpg",
+    "category": "Society & Culture"
+  },
+  {
+    "id": 4,
+    "title": "Simon Sinek: AI's Real Purpose",
+    "author": "The Diary Of A CEO",
+    "rating": 4.7,
+    "duration": "126 min",
+    "description": "Simon Sinek reveals the hidden dangers of AI and how we're accidentally teaching our kids to be less human. A powerful discussion on preserving human connection in an AI-dominated world.",
+    "imageUrl": "/src/assets/images/video_04_W4tqbEmplug_maxresdefault.jpg",
+    "category": "Technology & AI"
+  },
+  {
+    "id": 5,
+    "title": "Sundar Pichai: Google & Alphabet CEO",
+    "author": "Lex Fridman",
+    "rating": 4.5,
+    "duration": "180 min",
+    "description": "An in-depth conversation with Google's CEO about the future of AI, technology's role in society, and the challenges of leading one of the world's most influential tech companies.",
+    "imageUrl": "/src/assets/images/video_05_9V6tWC4CdFQ_maxresdefault.jpg",
+    "category": "Technology & Leadership"
+  },
+  {
+    "id": 6,
+    "title": "Life Lessons for Your 20s",
+    "author": "Jay Shetty",
+    "rating": 4.4,
+    "duration": "45 min",
+    "description": "Essential wisdom for young adults navigating their twenties. Jay Shetty shares crucial life lessons about purpose, relationships, and building a meaningful life before it's too late.",
+    "imageUrl": "/src/assets/images/video_06_d3GkLPGPtN8_maxresdefault.jpg",
+    "category": "Personal Development"
+  },
+  {
+    "id": 7,
+    "title": "Joe Rogan's Ancient Civilizations",
+    "author": "Favourite Podcasts",
+    "rating": 4.3,
+    "duration": "120 min",
+    "description": "A compilation of Joe Rogan's most fascinating discussions about ancient civilizations, lost history, and archaeological mysteries that challenge our understanding of human development.",
+    "imageUrl": "/src/assets/images/video_07_b2m5iWBVemU_maxresdefault.jpg",
+    "category": "History & Mystery"
+  },
+  {
+    "id": 8,
+    "title": "Tommy Robinson on Islam & Media",
+    "author": "PBD Podcast",
+    "rating": 3.9,
+    "duration": "85 min",
+    "description": "A controversial discussion about immigration, cultural integration, and media coverage. Tommy Robinson shares his perspective on contemporary social issues in Britain.",
+    "imageUrl": "/src/assets/images/video_08_0t6KT9RS9e8_maxresdefault.jpg",
+    "category": "Politics & Society"
+  },
+  {
+    "id": 9,
+    "title": "Alia Bhatt: ADHD, Anxiety & Motherhood",
+    "author": "Jay Shetty",
+    "rating": 4.6,
+    "duration": "65 min",
+    "description": "Bollywood star Alia Bhatt opens up about her mental health journey, dealing with ADHD and anxiety, and finding peace as a new mother in the spotlight.",
+    "imageUrl": "/src/assets/images/video_09_pzBvb4umRzo_maxresdefault.jpg",
+    "category": "Mental Health & Celebrity"
+  },
+  {
+    "id": 10,
+    "title": "8 Realistic Healthy Habits",
+    "author": "Mel Robbins",
+    "rating": 4.5,
+    "duration": "32 min",
+    "description": "Practical, science-backed healthy habits that actually make a huge difference in your daily life. Mel Robbins breaks down sustainable wellness practices anyone can implement.",
+    "imageUrl": "/src/assets/images/video_10_Kd7I6GrdGM_maxresdefault.jpg",
+    "category": "Health & Wellness"
+  }
+]
