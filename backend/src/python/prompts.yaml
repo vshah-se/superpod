@@ -1,0 +1,264 @@
+# SuperPod AI Agent Prompts Configuration
+# Optimized for edge cases, robust response handling, and metadata extraction
+
+# Summarization Agent Prompts
+summarization:
+  main_synopsis:
+    description: "Casual, engaging podcast synopsis with strong structure and fallback"
+    template: |
+      You're a podcast enthusiast summarizing this episode for a friend. Write a casual, engaging synopsis that captures the vibe, content, and key takeaways.
+
+      CONTEXT:
+      - Duration: {duration_minutes:.1f} minutes
+      - Segments: {num_segments}
+
+      TRANSCRIPT:
+      {full_text}
+
+      TASK: Write a synopsis under 200 words:
+
+      ## WHAT'S THIS ABOUT?
+      [Brief vibe + main topic in 2-3 sentences. If unclear, infer from intro/early segments.]
+
+      ## KEY TOPICS COVERED
+      • [Topic 1 - casual tone]
+      • [Topic 2 - casual tone]
+      • [Topic 3 - casual tone or "[Unclear/General Discussion]" if noisy]
+
+      ## COOL INSIGHTS
+      [Highlight 2–3 takeaways — ideas, quotes, or stats. If none found, say "Mostly general discussion."]
+
+      ## WHO SHOULD LISTEN?
+      [Audience hint — e.g. “Fans of tech debates” or “Anyone curious about ethics in AI.”]
+
+      Be casual, informative, and resilient to poor transcripts.
+
+  topic_extraction:
+    description: "Extracts main topics from noisy or clear transcripts"
+    template: |
+      Extract 3–5 main topics discussed in this podcast. Keep it short and casual.
+
+      TRANSCRIPT:
+      {full_text}
+
+      If unclear or off-topic, mention it. Format:
+      • Topic 1
+      • Topic 2
+      • Topic 3
+
+  formal_summary:
+    description: "Formal breakdown for structured summaries"
+    template: |
+      Provide a professional analysis of this podcast. Keep responses clean and dense with insights.
+
+      PODCAST INFO:
+      - Duration: {duration_minutes:.1f} minutes
+      - Segments: {num_segments}
+      - Language: {language}
+
+      TRANSCRIPT:
+      {full_text}
+
+      Structure:
+      1. Executive Summary
+      2. Themes & Topics
+      3. Insights & Takeaways
+      4. Quotes
+      5. Audience Fit
+      6. Assessment
+
+  bullet_point_summary:
+    description: "Bullet summary under 150 words"
+    template: |
+      Create a fast, digestible bullet-point summary of this podcast:
+
+      TRANSCRIPT:
+      {full_text}
+
+      Format:
+      • Main topic: ...
+      • Key point 1: ...
+      • Key point 2: ...
+      • Key point 3: ...
+      • Audience: ...
+
+  social_media_summary:
+    description: "Tweet-style hook with CTA"
+    template: |
+      Create a Twitter/X-style post to promote this podcast.
+
+      TRANSCRIPT:
+      {full_text}
+
+      Format:
+      [1-liner hook] [2 key points] [CTA] [Hashtags]
+      Max 280 characters. Feel free to use emojis or phrasing that stands out.
+
+# QA Agent Prompts
+qa:
+  main_qa_prompt:
+    description: "Context-aware QA from metadata, transcript, and segments"
+    template: |
+      You are a helpful podcast analyst assistant. Use the context to answer the user question:
+
+      CONTEXT:
+      {metadata_context}
+
+      {summary_context}
+
+      {segments_context}
+
+      CHAT HISTORY:
+      {history_context}
+
+      USER QUESTION: {user_question}
+
+      ANSWER GUIDELINES:
+      - Use available content only
+      - Quote relevant timestamps or phrases
+      - If unclear, say: “That info wasn't mentioned in this clip.”
+      - Stay concise, helpful, and friendly
+
+  follow_up_qa:
+    description: "Continues from previous podcast QA"
+    template: |
+      Continue this podcast discussion. Reference prior points if helpful.
+
+      CONTEXT:
+      {metadata_context}
+      {summary_context}
+      {segments_context}
+
+      PRIOR:
+      {history_context}
+
+      USER QUESTION: {user_question}
+
+      Write a natural, helpful reply building on the above.
+
+# Recommendation Agent Prompts
+recommendation:
+  metadata_extraction:
+    description: "Extract podcast metadata from transcript"
+    template: |
+      Analyze this podcast transcript and extract structured metadata in JSON.
+
+      TRANSCRIPT:
+      {full_text}
+
+      OUTPUT FORMAT:
+      {{
+        "content_summary": {{
+          "main_topic": "Short phrase, e.g. 'AI regulation' or 'startup failures'",
+          "category": "tech | business | health | edu | lifestyle | news | entertainment",
+          "content_type": "interview | monologue | discussion | Q&A | storytelling",
+          "main_takeaway": "1–2 insight points",
+          "target_audience": "beginners | experts | professionals | students | general public"
+        }},
+        "speakers": {{
+          "host": "Name or 'unknown'",
+          "guest": "Name or 'none'",
+          "speaker_roles": "e.g. 'AI ethicist & engineer'"
+        }},
+        "engagement": {{
+          "tone": "casual | formal | serious | humorous | educational",
+          "memorable_quote": "Quote or 'none'",
+          "action_item": "Call-to-action or 'none'"
+        }}
+      }}
+
+      RULES:
+      - Use exact keys
+      - Do not add commentary
+      - If unknown, use 'unknown' or 'none'
+      - Return valid JSON only
+
+  recommendation_generation:
+    description: "Recommend similar podcasts using structured metadata"
+    template: |
+      Recommend 3–5 similar podcast clips using reasoning based on metadata.
+
+      CURRENT CLIP:
+      {metadata}
+
+      AVAILABLE PODCASTS:
+      {available_podcasts}
+
+      OUTPUT FORMAT:
+      {{
+        "recommendations": [
+          {{
+            "podcast_id": "id",
+            "reason": "Why it's a good match",
+            "similarity_score": "high | medium | low",
+            "matching_factors": ["topic", "tone", ...]
+          }}
+        ]
+      }}
+
+      CONSTRAINTS:
+      - Base similarity on topic, tone, speaker type, and takeaway
+      - If few good matches, explain that
+      - JSON only, no prose
+
+# Transcription Agent
+transcription:
+  processing_instructions:
+    description: "Ensure transcript quality and clean segmentation"
+    template: |
+      While processing the Whisper output:
+      - Keep timestamps accurate and ISO-formatted if possible
+      - Identify speaker changes (e.g. Speaker 1 / Speaker 2)
+      - Split transcript into segments < 2 mins each
+      - Format output cleanly for downstream use
+
+# Key moment extraction
+key_moments:
+  importance_keywords:
+    - "important"
+    - "key"
+    - "main"
+    - "significant"
+    - "crucial"
+    - "core"
+    - "vital"
+    - "insight"
+  question_indicators:
+    - "what"
+    - "how"
+    - "why"
+    - "when"
+    - "?"
+  quote_indicators:
+    - "said"
+    - "mentioned"
+    - "quoted"
+    - "explained"
+    - "shared"
+
+# Model Config
+model_config:
+  default_model: "Llama-4-Scout-17B-16E-Instruct-FP8"
+  default_temperature: 0.6
+  default_max_tokens: 2048
+  default_top_p: 0.9
+  default_repetition_penalty: 1.0
+
+  summarization:
+    model: "Llama-4-Scout-17B-16E-Instruct-FP8"
+    temperature: 0.6
+    max_tokens: 2048
+
+  qa:
+    model: "Llama-4-Scout-17B-16E-Instruct-FP8"
+    temperature: 0.7
+    max_tokens: 1024
+
+  recommendation:
+    model: "Llama-4-Scout-17B-16E-Instruct-FP8"
+    temperature: 0.7
+    max_tokens: 1024
+
+  transcription:
+    model: "whisper-1"
+    temperature: 0.0

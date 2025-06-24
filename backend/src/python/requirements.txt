@@ -1,0 +1,6 @@
+llama-api-client
+chromadb
+Flask
+gunicorn
+requests
+openai

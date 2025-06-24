@@ -1,0 +1,35 @@
+# FastAPI and ASGI server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+
+# Data validation
+pydantic==2.5.0
+
+# HTTP client
+requests==2.31.0
+
+# YAML processing
+pyyaml==6.0.1
+
+# AI and ML
+llama_api_client
+openai>=1.0.0
+
+# Audio processing
+ffmpeg-python==0.2.0
+pydub==0.25.1
+
+# File monitoring
+watchdog==3.0.0
+
+# Utilities
+python-dotenv==1.0.0
+
+# YouTube downloading
+yt-dlp==2023.12.30
+
+# Additional ML dependencies
+torch
+torchaudio
+numpy 

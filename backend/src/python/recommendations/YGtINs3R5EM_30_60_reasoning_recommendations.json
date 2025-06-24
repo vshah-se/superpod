@@ -1,0 +1,51 @@
+{
+  "pipeline_id": "YGtINs3R5EM_30_60",
+  "timestamp": "2025-06-22T02:08:57.080427",
+  "original_transcript_info": {
+    "text_length": 1015,
+    "segments_count": 23,
+    "language": "english"
+  },
+  "deep_analysis": {
+    "content_analysis": {
+      "primary_theme": "general discussion",
+      "content_depth": "surface",
+      "expertise_level": "intermediate",
+      "discussion_style": "conversational",
+      "emotional_tone": "neutral"
+    },
+    "audience_analysis": {
+      "target_demographic": "general audience",
+      "prerequisite_knowledge": "basic understanding of topic"
+    },
+    "content_quality": {
+      "information_density": "medium",
+      "narrative_structure": "sequential discussion"
+    },
+    "fallback_analysis": true
+  },
+  "reasoning_recommendations": {
+    "reasoning_based_recommendations": {
+      "direct_matches": [],
+      "complementary_content": [],
+      "contrasting_perspectives": []
+    },
+    "personalized_paths": {
+      "beginner_path": [
+        "Start with basic concepts"
+      ],
+      "intermediate_path": [
+        "Build on existing knowledge"
+      ],
+      "expert_path": [
+        "Explore advanced topics"
+      ]
+    },
+    "fallback_recommendations": true
+  },
+  "report_metadata": {
+    "analysis_version": "2.0",
+    "reasoning_engine": "Llama4-Advanced",
+    "confidence_level": "high"
+  }
+}
