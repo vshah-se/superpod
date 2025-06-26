@@ -87,7 +87,7 @@ class PipelineStatus(BaseModel):
 
 # Initialize services
 llama_connector = LlamaNodeConnector()
-youtube_service = YouTubeService(api_key="AIzaSyDErNgVgBG0I7AtP8NoMWTeRYqBtUZbEuA")
+youtube_service = YouTubeService(api_key="")
 audio_downloader = AudioDownloader()
 ingestion_pipeline = IngestionPipeline()
 
